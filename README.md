@@ -1,37 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thiago Farias - Personal Portfolio
 
-## Getting Started
+A modern, responsive personal portfolio showcasing my work as a software engineer with expertise in test automation, quality engineering, frontend, and backend development.
 
-First, run the development server:
+## 🎨 Features
+
+- **Responsive Design** — Optimized for mobile, tablet, and desktop screens
+- **Dark Mode** — Toggle between light and dark themes with persistent storage
+- **Multi-language Support** — English and Portuguese translations
+- **Premium UI** — Custom color palette with glassmorphism effects
+- **Modern Tech Stack** — Built with Next.js 16, React 19, and Tailwind CSS
+
+## 🚀 Tech Stack
+
+- [Next.js 16](https://nextjs.org) — React framework with app router
+- [React 19](https://react.dev) — UI library
+- [Tailwind CSS](https://tailwindcss.com) — Utility-first CSS framework
+- [next-themes](https://github.com/pacocoursey/next-themes) — Theme management
+- [Lucide React](https://lucide.dev) — Icon library
+- [TypeScript](https://www.typescriptlang.org) — Type safety
+
+## 📋 Pages
+
+- **Home** — Landing page with hero section and intro
+- **About** — Personal background and experience summary
+- **Experience** — Professional experience timeline
+- **Contact** — Get in touch section
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/thiagofarias94/thiago-farias-portfolio.git
+cd thiago-farias-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 🎨 Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Colors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Light mode and dark mode color palettes are defined in `app/globals.css`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Light mode** — Warm beige background with teal accents
+- **Dark mode** — Deep navy background with teal accents
 
-## Deploy on Vercel
+### Translations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Translations are managed with a global language provider in `components/language/language-provider.tsx`. Add new translations by updating the translation maps in each page component.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# thiago-farias-portfolio
+## 📄 License
+
+This project is open source and available under the MIT License.
