@@ -3,6 +3,7 @@
 import React from "react";
 import { useLanguage } from "../components/language/language-provider";
 import Navbar from "@/components/ui/navbar";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -50,18 +51,30 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
 
-<section className="container mx-auto overflow-hidden px-6 py-8 md:py-12">
-  <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
+      <section className="container mx-auto overflow-hidden px-6 py-8 md:py-12">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
 
-    {/* LEFT SIDE */}
-    <div className="max-w-[780px] order-2 lg:order-1">
+          {/* LEFT SIDE */}
+          <div className="max-w-[780px] order-2 lg:order-1">
 
-      <p className="mb-5 text-xs uppercase tracking-[0.35em] text-[var(--sidebar-accent)] md:text-sm">
-        {L.role}
-      </p>
+            <p className="mb-5 text-xs uppercase tracking-[0.35em] text-[var(--sidebar-accent)] md:text-sm">
+              {L.role}
+            </p>
 
-      <h1
-        className="
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.25, 1, 0.5, 1],
+              }}
+              className="
           text-[3.5rem]
           font-bold
           leading-[0.92]
@@ -72,17 +85,30 @@ export default function Home() {
           md:text-[5.5rem]
           lg:text-[6rem]
         "
-      >
-        {L.heading.map((line, i) => (
-          <React.Fragment key={i}>
-            {line}
-            <br />
-          </React.Fragment>
-        ))}
-      </h1>
+            >
+              {L.heading.map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
+            </motion.h1>
 
-      <p
-        className="
+            <motion.p
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    delay: 0.15,
+    duration: 0.7,
+    ease: [0.25, 1, 0.5, 1],
+  }}
+              className="
           mt-8
           max-w-xl
           text-base
@@ -91,13 +117,25 @@ export default function Home() {
 
           md:text-lg
         "
-      >
-        {L.para}
-      </p>
+            >
+              {L.para}
+            </motion.p>
 
-      {/* BUTTONS */}
-      <div
-        className="
+            {/* BUTTONS */}
+            <motion.div
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    delay: 0.3,
+    duration: 0.7,
+  }}
+              className="
           mt-10
           flex
           flex-col
@@ -105,10 +143,10 @@ export default function Home() {
 
           sm:flex-row
         "
-      >
-        <button
-          onClick={handleViewLinkedIn}
-          className="
+            >
+              <button
+                onClick={handleViewLinkedIn}
+                className="
             rounded-full
             bg-[var(--primary)]
             px-8
@@ -120,13 +158,13 @@ export default function Home() {
             hover:scale-[1.02]
             active:scale-[0.98]
           "
-        >
-          {L.cta}
-        </button>
+              >
+                {L.cta}
+              </button>
 
-        <button
-          onClick={handleDownloadResume}
-          className="
+              <button
+                onClick={handleDownloadResume}
+                className="
             rounded-full
             border
             border-[var(--primary)]
@@ -140,15 +178,23 @@ export default function Home() {
             hover:scale-[1.02]
             active:scale-[0.98]
           "
-        >
-          {L.resume}
-        </button>
-      </div>
-    </div>
+              >
+                {L.resume}
+              </button>
+            </motion.div>
+          </div>
 
-    {/* RIGHT SIDE */}
-    <div
-      className="
+          {/* RIGHT SIDE */}
+          <motion.div
+          animate={{
+    y: [0, -10, 0],
+  }}
+  transition={{
+    duration: 6,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+            className="
         relative
         flex
         items-center
@@ -157,11 +203,11 @@ export default function Home() {
         order-1
         lg:order-2
       "
-    >
+          >
 
-      {/* glow */}
-      <div
-        className="
+            {/* glow */}
+            <div
+              className="
           absolute
           z-0
           h-[320px]
@@ -174,13 +220,13 @@ export default function Home() {
           md:h-[500px]
           md:w-[500px]
         "
-      />
+            />
 
-      {/* splash */}
-      <img
-        src="/images/splash.png"
-        alt="Splash"
-        className="
+            {/* splash */}
+            <img
+              src="/images/splash.png"
+              alt="Splash"
+              className="
           absolute
           z-0
           w-[340px]
@@ -191,14 +237,14 @@ export default function Home() {
           md:w-[520px]
           lg:w-[760px]
         "
-      />
+            />
 
-      {/* image */}
-      <div className="relative z-10">
-        <img
-          src="/images/profile_pic.svg"
-          alt="Thiago"
-          className="
+            {/* image */}
+            <div className="relative z-10">
+              <img
+                src="/images/profile_pic.svg"
+                alt="Thiago"
+                className="
             h-[420px]
             w-auto
             object-contain
@@ -206,39 +252,81 @@ export default function Home() {
             md:h-[620px]
             lg:h-[860px]
           "
-        />
-      </div>
+              />
+            </div>
 
-      {/* intro card */}
-      <div
-        className="
-          absolute
-          bottom-[10px]
-          right-[0px]
-          z-10
-          max-w-[220px]
-          rounded-[20px]
-          border
-          border-[var(--border)]
-          bg-[var(--card)]
-          px-4
-          py-4
-          shadow-sm
-          backdrop-blur-md
+            {/* speech bubble */}
+            <div
+              className="
+    absolute
+    bottom-[20px]
+    right-[0px]
+    z-20
 
-          md:right-[20px]
-          md:top-[80px]
-          md:bottom-auto
-          md:max-w-[260px]
-        "
-      >
-        <p className="text-sm leading-relaxed text-[var(--muted)]">
-          {L.introCard}
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    max-w-[220px]
+
+    rounded-[22px]
+    border
+    border-[var(--border)]
+    bg-[var(--card)]
+
+    px-4
+    py-3
+
+    shadow-sm
+    backdrop-blur-xl
+
+    md:right-[10px]
+    md:top-[90px]
+    md:bottom-auto
+    md:max-w-[260px]
+    md:px-5
+    md:py-4
+  "
+            >
+
+              {/* bubble tail */}
+              <div
+                className="
+      absolute
+      -bottom-2
+      left-8
+
+      h-4
+      w-4
+
+      rotate-45
+
+      border-b
+      border-r
+      border-[var(--border)]
+
+      bg-[var(--card)]
+
+      md:left-10
+    "
+              />
+
+              <p
+                className="
+      relative
+      z-10
+
+      text-sm
+      leading-relaxed
+      text-[var(--muted)]
+
+      md:text-[15px]
+    "
+              >
+                {language === "PT"
+                  ? "Oi, eu sou o Thiago 👋 Prazer!"
+                  : "Hi, I'm Thiago 👋 Nice to meet you!"}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }
